@@ -1,7 +1,13 @@
 body {
     margin: 0;
+    /* display: inline; */
 }
 
 .close-button {
     border: 1px solid black;
+}
+
+.small-img {
+    width: 450px;
+    height: auto;
 }

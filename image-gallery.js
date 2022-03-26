@@ -38,6 +38,7 @@ function imgInit(arr) {
         let imgDiv = document.createElement("div");
         imgDiv.setAttribute("class", "small-img-div");
         imgDiv.setAttribute("id", "img-div-" + i);
+        imgDiv.style.display = "inline";
         document.body.appendChild(imgDiv);
         
         let imgTag = document.createElement("img");
@@ -47,9 +48,31 @@ function imgInit(arr) {
         document.getElementById("img-div-" + i).appendChild(imgTag);
 
         imgDiv.addEventListener("click", function() { enlargeImage(imgTag.getAttribute("id")) });
+        imgDiv.addEventListener("mouseover", function() { hoverOver(imgTag.getAttribute("id")) });
+        imgDiv.addEventListener("mouseout", function() { hoverOut(imgTag.getAttribute("id")) });
+
         
     }
 }
+
+// function hoverOver() 
+// changes color of border on hover
+//
+
+function hoverOver(id) {
+    let el = document.getElementById(id);
+    el.style.border = "3px solid red";
+}
+
+// function hoverOut() undoes result of hoverOver()
+//
+
+function hoverOut(id) {
+    let el = document.getElementById(id);
+    el.style.border = "none";
+}
+
+
 
 
 // function enlargeImage(class or id of image)
