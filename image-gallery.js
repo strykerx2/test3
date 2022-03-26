@@ -3,19 +3,23 @@
 
 
 
-// set global elements
+// initialize elements relevant for enlarged image
 //
 
-let imgArray = [ "img/atl.png", "img/bos.png", "img/chh.png", "img/chi.png", "img/cle.png", "img/gsw.png", "img/hou.png", "img/lal.png", "img/mia.png", "img/okc.png", "img/phx.png", "img/tor.png" ]
+let imgArray = [    "img/atl.png", "img/bos.png", "img/chh.png", 
+                    "img/chi.png", "img/cle.png", "img/gsw.png", 
+                    "img/hou.png", "img/lal.png", "img/mia.png", 
+                    "img/okc.png", "img/phx.png", "img/tor.png" ];
 
 let bigDiv = document.createElement("div");
 bigDiv.style.display = "none";
 bigDiv.setAttribute("class", "big-div");
 bigDiv.setAttribute("id", "big-div");
-document.body.appendChild(bigDiv);
+document.getElementById("gallery-content").appendChild(bigDiv);
+// document.body.appendChild(bigDiv);
 
 let bigImg = document.createElement("img");
-bigImg
+bigImg.setAttribute("class", "big-img");
 
 let closeBtn = document.createElement("button");
 closeBtn.style.display = "none";
@@ -38,8 +42,8 @@ function imgInit(arr) {
         let imgDiv = document.createElement("div");
         imgDiv.setAttribute("class", "small-img-div");
         imgDiv.setAttribute("id", "img-div-" + i);
-        imgDiv.style.display = "inline";
-        document.body.appendChild(imgDiv);
+        imgDiv.style.display = "inline-block";
+        document.getElementById("small-images").appendChild(imgDiv);
         
         let imgTag = document.createElement("img");
         imgTag.setAttribute("class", "small-img");
@@ -50,15 +54,13 @@ function imgInit(arr) {
         imgDiv.addEventListener("click", function() { enlargeImage(imgTag.getAttribute("id")) });
         imgDiv.addEventListener("mouseover", function() { hoverOver(imgTag.getAttribute("id")) });
         imgDiv.addEventListener("mouseout", function() { hoverOut(imgTag.getAttribute("id")) });
-
-        
     }
 }
+
 
 // function hoverOver() 
 // changes color of border on hover
 //
-
 function hoverOver(id) {
     let el = document.getElementById(id);
     el.style.border = "3px solid red";
@@ -66,20 +68,18 @@ function hoverOver(id) {
 
 // function hoverOut() undoes result of hoverOver()
 //
-
 function hoverOut(id) {
     let el = document.getElementById(id);
     el.style.border = "none";
 }
 
 
-
-
 // function enlargeImage(class or id of image)
-// changes link of bigImg <img> that is inside the hidden bigDiv
+// changes link of bigImg <img> that is inside the hidden bigDiv to the url 
+// of the clicked image
 //
 function enlargeImage(id) {
-    console.log("enlargeImage() called on " + id);
+    document.getElementById("overlay").style.display = "block";
 
     let chosenLink = document.getElementById(id).getAttribute("src");
 
@@ -97,11 +97,14 @@ function closeBigImage() {
     bigDiv.style.display = "none";
 }
 
-// left right arrows
-// function nextImageBig(current img)
+
+// function rightArrow(current img)
 // call closeBigImage() on current image
 // figure out next image, call makeImageBig(next image)
 //
+function rightArrow(id) {
+
+}
 
 
 
