@@ -9,7 +9,7 @@
 let imgArray = [ "img/atl.png", "img/bos.png", "img/chh.png", "img/chi.png", "img/cle.png", "img/gsw.png", "img/hou.png", "img/lal.png", "img/mia.png", "img/okc.png", "img/phx.png", "img/tor.png" ]
 
 let bigDiv = document.createElement("div");
-bigDiv.setAttribute("display", "none");
+bigDiv.style.display = "none";
 bigDiv.setAttribute("class", "big-div");
 bigDiv.setAttribute("id", "big-div");
 document.body.appendChild(bigDiv);
@@ -79,6 +79,8 @@ function closeBigImage() {
 // call closeBigImage() on current image
 // figure out next image, call makeImageBig(next image)
 //
+
+
 
 
 imgInit(imgArray);
