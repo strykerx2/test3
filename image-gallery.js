@@ -1,21 +1,78 @@
 // script file for image gallery assignment 7
 //
 
+let imgArray = [ "img/atl.png", "img/bos.png", "img/chh.png", "img/chi.png", "img/cle.png", "img/gsw.png", "img/hou.png", "img/lal.png", "img/mia.png", "img/okc.png", "img/phx.png", "img/tor.png" ]
+
+let bigDiv = document.createElement("div");
+bigDiv.setAttribute("display", "none");
+bigDiv.setAttribute("class", "big-div");
+bigDiv.setAttribute("id", "big-div");
+document.body.appendChild(bigDiv);
+
+let bigImg = document.createElement("img");
+bigImg
+
+let closeBtn = document.createElement("button");
+closeBtn.style.display = "none";
+closeBtn.innerHTML = "X";
+closeBtn.setAttribute("class", "close-button");
+closeBtn.addEventListener("click", closeBigImage);
+
+bigDiv.appendChild(closeBtn);
+bigDiv.appendChild(bigImg);
+
+// function imgInit(img array)
 // start with array of image urls
-// empty page on start, function displayImagesFromArray(img array)
+// empty page on start
 // that iterates through array and displays them
 // for each url create a div to hold the image, the img itself
 //
+function imgInit(arr) {
 
+    for (i = 0; i < arr.length; i++) {
+
+        let imgDiv = document.createElement("div");
+        imgDiv.setAttribute("class", "small-img-div");
+        imgDiv.setAttribute("id", "img-div-" + i);
+        document.body.appendChild(imgDiv);
+        
+        let imgTag = document.createElement("img");
+        imgTag.setAttribute("class", "small-img");
+        imgTag.setAttribute("id", "small-img-" + i);
+        imgTag.setAttribute("src", arr[i]);
+        document.getElementById("img-div-" + i).appendChild(imgTag);
+
+        imgDiv.addEventListener("click", function() { enlargeImage(imgTag.getAttribute("id")) });
+        
+    }
+}
+
+
+// function enlargeImage(class or id of image)
 // make image big on click
-// 1. make a hidden div called big-div
+// make a bigDiv div called big-div
 // display: none, on click put image into big-div, set display: block
-// function makeImageBig(some identifier of image)
 //
+function enlargeImage(id) {
+    console.log("enlargeImage() called on " + id);
+
+    let chosenLink = document.getElementById(id).getAttribute("src");
+
+    closeBtn.style.display = "inline-block";
+    bigImg.setAttribute("src", chosenLink);
+
+    bigDiv.style.display = "block";
+}
+
+
+
 
 // function closeBigImage()
 // set big-div display: none;
 //
+function closeBigImage() {
+    bigDiv.style.display = "none";
+}
 
 // left right arrows
 // function nextImageBig(current img)
@@ -23,3 +80,5 @@
 // figure out next image, call makeImageBig(next image)
 //
 
+
+imgInit(imgArray);
