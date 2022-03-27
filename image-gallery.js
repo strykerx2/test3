@@ -19,15 +19,18 @@ document.getElementById("enlarged-wrapper").appendChild(bigDiv);
 let bigImg = document.createElement("img");
 bigImg.setAttribute("class", "big-img");
 
+bigDiv.appendChild(bigImg);
+
 let navBtns = document.createElement("div");
 navBtns.setAttribute("class", "btn-group");
 navBtns.id = "nav-buttons";
+
 bigDiv.appendChild(navBtns);
 
 let leftBtn = document.createElement("button");
 leftBtn.setAttribute("class", "btn btn-primary");
 leftBtn.id = "left-btn";
-leftBtn.innerHTML = "<-";
+leftBtn.innerHTML = "<";
 navBtns.appendChild(leftBtn);
 
 let closeBtn = document.createElement("button");
@@ -40,10 +43,10 @@ navBtns.appendChild(closeBtn);
 let rightBtn = document.createElement("button");
 rightBtn.setAttribute("class", "btn btn-primary");
 rightBtn.id = "right-btn";
-rightBtn.innerHTML = "->"
+rightBtn.innerHTML = ">";
 navBtns.appendChild(rightBtn);
 
-bigDiv.appendChild(bigImg);
+
 
 
 
