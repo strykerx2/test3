@@ -2,7 +2,6 @@
 //
 
 
-
 // initialize elements relevant for enlarged image
 //
 
@@ -16,12 +15,6 @@ bigDiv.style.display = "none";
 bigDiv.setAttribute("class", "big-div");
 bigDiv.setAttribute("id", "big-div");
 document.getElementById("enlarged-wrapper").appendChild(bigDiv);
-
-{/* <div class="btn-group" id="nav-buttons">
-    <button type="button" class="btn btn-primary">Apple</button>
-    <button type="button" class="btn btn-primary" id="close">Samsung</button>
-    <button type="button" class="btn btn-primary">Sony</button>
-</div> */}
 
 let bigImg = document.createElement("img");
 bigImg.setAttribute("class", "big-img");
@@ -50,14 +43,6 @@ rightBtn.id = "right-btn";
 rightBtn.innerHTML = "->"
 navBtns.appendChild(rightBtn);
 
-
-// let closeBtn = document.createElement("button");
-// closeBtn.style.display = "none";
-// closeBtn.innerHTML = "X";
-// closeBtn.setAttribute("class", "close-button");
-// closeBtn.addEventListener("click", closeBigImage);
-
-// bigDiv.appendChild(closeBtn);
 bigDiv.appendChild(bigImg);
 
 
@@ -130,6 +115,7 @@ function closeBigImage() {
     document.getElementById("overlay").style.display = "none";
 }
 
+
 // arrows are implemented so first and last point to each other
 //
 
@@ -152,8 +138,6 @@ function leftArrow(id) {
     }
 
     let prevId = document.getElementById("small-img-" + prevIndex).getAttribute("id");
-
-    console.log(prevId);
     
     enlargeImage(prevId);
 }
@@ -177,13 +161,8 @@ function rightArrow(id) {
     }
 
     let nextId = document.getElementById("small-img-" + nextIndex).getAttribute("id");
-
-    console.log(nextId);
     
     enlargeImage(nextId);
 }
-
-
-
 
 imgInit(imgArray);
