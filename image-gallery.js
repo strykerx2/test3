@@ -15,19 +15,49 @@ let bigDiv = document.createElement("div");
 bigDiv.style.display = "none";
 bigDiv.setAttribute("class", "big-div");
 bigDiv.setAttribute("id", "big-div");
-document.getElementById("gallery-content").appendChild(bigDiv);
-// document.body.appendChild(bigDiv);
+document.getElementById("enlarged-wrapper").appendChild(bigDiv);
+
+{/* <div class="btn-group" id="nav-buttons">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary" id="close">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+</div> */}
 
 let bigImg = document.createElement("img");
 bigImg.setAttribute("class", "big-img");
 
-let closeBtn = document.createElement("button");
-closeBtn.style.display = "none";
-closeBtn.innerHTML = "X";
-closeBtn.setAttribute("class", "close-button");
-closeBtn.addEventListener("click", closeBigImage);
+let navBtns = document.createElement("div");
+navBtns.setAttribute("class", "btn-group");
+navBtns.id = "nav-buttons";
+bigDiv.appendChild(navBtns);
 
-bigDiv.appendChild(closeBtn);
+let leftBtn = document.createElement("button");
+leftBtn.setAttribute("class", "btn btn-primary");
+leftBtn.id = "left-btn";
+leftBtn.innerHTML = "<-";
+navBtns.appendChild(leftBtn);
+
+let closeBtn = document.createElement("button");
+closeBtn.setAttribute("class", "btn btn-primary");
+closeBtn.id = "close-button";
+closeBtn.innerHTML = "Close";
+closeBtn.addEventListener("click", closeBigImage);
+navBtns.appendChild(closeBtn);
+
+let rightBtn = document.createElement("button");
+rightBtn.setAttribute("class", "btn btn-primary");
+rightBtn.id = "right-btn";
+rightBtn.innerHTML = "->"
+navBtns.appendChild(rightBtn);
+
+
+// let closeBtn = document.createElement("button");
+// closeBtn.style.display = "none";
+// closeBtn.innerHTML = "X";
+// closeBtn.setAttribute("class", "close-button");
+// closeBtn.addEventListener("click", closeBigImage);
+
+// bigDiv.appendChild(closeBtn);
 bigDiv.appendChild(bigImg);
 
 
@@ -83,9 +113,11 @@ function enlargeImage(id) {
 
     let chosenLink = document.getElementById(id).getAttribute("src");
 
+    leftBtn.addEventListener("click", function() { leftArrow(id) });
+    rightBtn.addEventListener("click", function() { rightArrow(id) });
+
     closeBtn.style.display = "inline-block";
     bigImg.setAttribute("src", chosenLink);
-
     bigDiv.style.display = "block";
 }
 
@@ -95,15 +127,60 @@ function enlargeImage(id) {
 //
 function closeBigImage() {
     bigDiv.style.display = "none";
+    document.getElementById("overlay").style.display = "none";
 }
 
+// arrows are implemented so first and last point to each other
+//
+
+// function leftArrow(current img)
+// call closeBigImage() on current image
+// figure out previous image, call enlargeImage(previous image)
+//
+function leftArrow(id) {
+    closeBigImage(id);
+
+    let currLink = document.getElementById(id).getAttribute("src");
+
+    let index = imgArray.indexOf(currLink);
+
+    let prevIndex = 0;
+    if (index == 0) {
+        prevIndex = 11;
+    } else {
+        prevIndex = index - 1;
+    }
+
+    let prevId = document.getElementById("small-img-" + prevIndex).getAttribute("id");
+
+    console.log(prevId);
+    
+    enlargeImage(prevId);
+}
 
 // function rightArrow(current img)
 // call closeBigImage() on current image
-// figure out next image, call makeImageBig(next image)
+// figure out next image, call enlargeImage(next image)
 //
 function rightArrow(id) {
+    closeBigImage(id);
 
+    let currLink = document.getElementById(id).getAttribute("src");
+
+    let index = imgArray.indexOf(currLink);
+
+    let nextIndex = 0;
+    if (index == 11) {
+        nextIndex = 0;
+    } else {
+        nextIndex = index + 1;
+    }
+
+    let nextId = document.getElementById("small-img-" + nextIndex).getAttribute("id");
+
+    console.log(nextId);
+    
+    enlargeImage(nextId);
 }
 
 
