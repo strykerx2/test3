@@ -10,6 +10,9 @@ let imgArray = [    "img/atl.png", "img/bos.png", "img/chh.png",
                     "img/hou.png", "img/lal.png", "img/mia.png", 
                     "img/okc.png", "img/phx.png", "img/tor.png" ];
 
+                  
+// make a div to hold the enlarged image
+//
 let bigDiv = document.createElement("div");
 bigDiv.style.display = "none";
 bigDiv.setAttribute("class", "big-div");
@@ -18,43 +21,62 @@ document.getElementById("enlarged-wrapper").appendChild(bigDiv);
 
 let bigImg = document.createElement("img");
 bigImg.setAttribute("class", "big-img");
+bigImg.setAttribute("id", "big-img");
 
 bigDiv.appendChild(bigImg);
 
+
+// navigation bar for enlarged image
+// these need class attributes for bootstrap
+//
 let navBtns = document.createElement("div");
 navBtns.setAttribute("class", "btn-group");
 navBtns.id = "nav-buttons";
 
 bigDiv.appendChild(navBtns);
 
-let leftBtn = document.createElement("button");
-leftBtn.setAttribute("class", "btn btn-primary");
-leftBtn.id = "left-btn";
-leftBtn.innerHTML = "<";
-navBtns.appendChild(leftBtn);
-
 let closeBtn = document.createElement("button");
 closeBtn.setAttribute("class", "btn btn-primary");
 closeBtn.id = "close-button";
 closeBtn.innerHTML = "Close";
 closeBtn.addEventListener("click", closeBigImage);
-navBtns.appendChild(closeBtn);
+
+// left and right arrows should not have to take in id
+// attach a data- attribute to each button
+// make helper function that updates each one after click
+//
+
+let leftBtn = document.createElement("button");
+leftBtn.setAttribute("class", "btn btn-primary");
+leftBtn.id = "left-btn";
+leftBtn.innerHTML = "<";
+leftBtn.addEventListener("click", function() { leftArrow() });
 
 let rightBtn = document.createElement("button");
 rightBtn.setAttribute("class", "btn btn-primary");
 rightBtn.id = "right-btn";
 rightBtn.innerHTML = ">";
+rightBtn.addEventListener("click", function() { rightArrow() });
+
+
+// append nav buttons to navBtn div in correct order
+//
+navBtns.appendChild(leftBtn);
+navBtns.appendChild(closeBtn);
 navBtns.appendChild(rightBtn);
 
 
 
 
+/****************************************/
+
+// function definitions
+//
 
 // function imgInit(img array)
 // takes in array of image urls, wraps each in a div
 //
 function imgInit(arr) {
-
     for (i = 0; i < arr.length; i++) {
 
         let imgDiv = document.createElement("div");
@@ -87,6 +109,10 @@ function hoverOver(id) {
 // function hoverOut() undoes result of hoverOver()
 //
 function hoverOut(id) {
+
+    console.log("hoverOut() called");
+
+
     let el = document.getElementById(id);
     el.style.border = "none";
 }
@@ -97,14 +123,11 @@ function hoverOut(id) {
 // of the clicked image
 //
 function enlargeImage(id) {
+
     document.getElementById("overlay").style.display = "block";
 
     let chosenLink = document.getElementById(id).getAttribute("src");
-
-    leftBtn.addEventListener("click", function() { leftArrow(id) });
-    rightBtn.addEventListener("click", function() { rightArrow(id) });
-
-    closeBtn.style.display = "inline-block";
+    
     bigImg.setAttribute("src", chosenLink);
     bigDiv.style.display = "block";
 }
@@ -126,10 +149,10 @@ function closeBigImage() {
 // call closeBigImage() on current image
 // figure out previous image, call enlargeImage(previous image)
 //
-function leftArrow(id) {
-    closeBigImage(id);
+function leftArrow() {
+    closeBigImage();
 
-    let currLink = document.getElementById(id).getAttribute("src");
+    let currLink = document.getElementById("big-img").getAttribute("src");
 
     let index = imgArray.indexOf(currLink);
 
@@ -149,10 +172,10 @@ function leftArrow(id) {
 // call closeBigImage() on current image
 // figure out next image, call enlargeImage(next image)
 //
-function rightArrow(id) {
-    closeBigImage(id);
+function rightArrow() {
+    closeBigImage();
 
-    let currLink = document.getElementById(id).getAttribute("src");
+    let currLink = document.getElementById("big-img").getAttribute("src");
 
     let index = imgArray.indexOf(currLink);
 
