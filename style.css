@@ -7,11 +7,19 @@ body {
 	padding: 0;
 	background-color: #f4f4f4;
 }
-
+/* Styline the Heading of Image Gallery */
+.heading{ 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	background: white;
+	-webkit-text-fill-color: transparent;
+}
 /* Styling gallery section where all images are */
 .gallery {
 	width: 90%;
-	margin:20px auto;
+	margin:0 auto;
 	display:grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-gap: 20px;
