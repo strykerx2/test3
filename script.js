@@ -19,15 +19,15 @@ function closeImage() {
 
 function leftImage(){
     closeImage();
-    if(ph == img1.jpg)
+    if(ph = img1.jpg)
     {
         showImage(img12.png);
     }
-    else if(ph == img2.jpg)
+    else if(ph = img2.jpg)
     {
         showImage(img1.jpg);
     }
-    else if(ph == img3.png)
+    else if(ph = img3.png)
     {
         showImage(img2.jpg);
     }
@@ -35,35 +35,35 @@ function leftImage(){
     {
         showImage(img3.png);
     }
-    else if(ph == img5.jpg)
+    else if(ph = img5.jpg)
     {
         showImage(img4.png)
     }
-    else if(ph == img6.jpg)
+    else if(ph = img6.jpg)
     {
         showImage(img5.jpg)
     }
-    else if(ph == img7.png)
+    else if(ph = img7.png)
     {
         showImage(img6.jpg)
     }
-    else if(ph == img8.png)
+    else if(ph = img8.png)
     {
         showImage(img7.png)
     }
-    else if(ph == img9.jpg)
+    else if(ph = img9.jpg)
     {
         showImage(img8.png)
     }
-    else if(ph == img10.jpg)
+    else if(ph = img10.jpg)
     {
         showImage(img9.jpg)
     }
-    else if(ph == img11.jpg)
+    else if(ph = img11.jpg)
     {
         showImage(img10.jpg)
     }
-    else if(ph == img12.png)
+    else if(ph = img12.png)
     {
         showImage(img11.jpg)
     }

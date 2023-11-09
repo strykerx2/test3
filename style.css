@@ -63,7 +63,7 @@ body {
 .left-button {
 	position: absolute;
 	top: 20px;
-	right: 25%;
+	right: 75%;
 	font-size:60px;
 	color: #fff;
 	cursor: pointer;
@@ -71,7 +71,7 @@ body {
 .right-button {
 	position: absolute;
 	top: 20px;
-	right: 75%;
+	right: 25%;
 	font-size:60px;
 	color: #fff;
 	cursor: pointer;
