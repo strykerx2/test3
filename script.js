@@ -56,6 +56,9 @@ function closeImage() {
 }
 
 function leftImage(){
+    showImage(img12.png);
+    showImage("img1.png");
+   /* 
     closeImage();
     if(ph == 1)
     {
@@ -101,15 +104,64 @@ function leftImage(){
     {
         showImage("img10.jpg")
     }
-    else if(ph === 12)
+    else if(ph == 12)
     {
         showImage("img11.jpg")
     }
+    */
     
 
 }
 
 function rightImage(){
-    
+    closeImage();
+    if(ph == 11)
+    {
+        showImage("img12.png");
+    }
+    else if(ph == 12)
+    {
+        showImage("img1.jpg");
+    }
+    else if(ph == 1)
+    {
+        showImage("img2.jpg");
+    }
+    else if(ph == 2)
+    {
+        showImage("img3.png");
+    }
+    else if(ph == 3)
+    {
+        showImage("img4.png")
+    }
+    else if(ph == 4)
+    {
+        showImage("img5.jpg")
+    }
+    else if(ph == 5)
+    {
+        showImage("img6.jpg")
+    }
+    else if(ph == 6)
+    {
+        showImage("img7.png")
+    }
+    else if(ph == 7)
+    {
+        showImage("img8.png")
+    }
+    else if(ph == 8)
+    {
+        showImage("img9.jpg")
+    }
+    else if(ph == 9)
+    {
+        showImage("img10.jpg")
+    }
+    else if(ph == 10)
+    {
+        showImage("img11.jpg")
+    }
 }
     
