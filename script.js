@@ -1,10 +1,48 @@
-let ph;
+let ph = 0;
 
 // function to show image when we click on a image
 function showImage(imageSrc) {
     let popupImage = document.getElementById("popupImage");
     popupImage.src = imageSrc;
-    ph = imageSrc;
+    if(imageSrc == "img1.jpg")
+    {
+        ph = 1;
+    }
+    else if(imageSrc == "img2.jpg")
+    {
+        ph = 2;    }
+    else if(imageSrc == "img3.png")
+    {
+        ph = 3;    }
+    else if(imageSrc == "img4.png")
+    {
+        ph = 4;    }
+    else if(imageSrc == "img5.jpg")
+    {
+        ph = 5;    }
+    else if(imageSrc == "img6.jpg")
+    {
+        ph = 6;    }
+    else if(imageSrc == "img7.png")
+    {
+        ph = 7;    }
+    else if(imageSrc == "img8.png")
+    {
+        ph = 8;    }
+    else if(imageSrc == "img9.jpg")
+    {
+        ph = 9;    }
+    else if(imageSrc == "img10.jpg")
+    {
+        ph = 10;    }
+    else if(imageSrc == "img11.jpg")
+    {
+        ph = 11;    }
+    else if(imageSrc == "img12.png")
+    {
+        ph = 12;    }
+    console.log(ph);
+    console.log(imageSrc);
 
     let imagePopup = document.getElementById("imagePopup");
     imagePopup.style.display = "block";
@@ -18,58 +56,56 @@ function closeImage() {
 }
 
 function leftImage(){
-   // closeImage();
-    if(ph == img1.jpg)
+    closeImage();
+    if(ph == 1)
     {
-        showImage(img12.png);
+        showImage("img12.png");
     }
-    else if(ph == img2.jpg)
+    else if(ph == 2)
     {
-        showImage(img1.jpg);
+        showImage("img1.jpg");
     }
-    else if(ph == img3.png)
+    else if(ph == 3)
     {
-        showImage(img2.jpg);
+        showImage("img2.jpg");
     }
-    else if(ph == img4.png)
+    else if(ph == 4)
     {
-        showImage(img3.png);
+        showImage("img3.png");
     }
-    else if(ph == img5.jpg)
+    else if(ph == 5)
     {
-        showImage(img4.png)
+        showImage("img4.png")
     }
-    else if(ph == img6.jpg)
+    else if(ph == 6)
     {
-        showImage(img5.jpg)
+        showImage("img5.jpg")
     }
-    else if(ph == img7.png)
+    else if(ph == 7)
     {
-        showImage(img6.jpg)
+        showImage("img6.jpg")
     }
-    else if(ph == img8.png)
+    else if(ph == 8)
     {
-        showImage(img7.png)
+        showImage("img7.png")
     }
-    else if(ph == img9.jpg)
+    else if(ph == 9)
     {
-        showImage(img8.png)
+        showImage("img8.png")
     }
-    else if(ph == img10.jpg)
+    else if(ph == 10)
     {
-        showImage(img9.jpg)
+        showImage("img9.jpg")
     }
-    else if(ph == img11.jpg)
+    else if(ph == 11)
     {
-        showImage(img10.jpg)
+        showImage("img10.jpg")
     }
-    else if(ph === img12.png)
+    else if(ph === 12)
     {
-        showImage(img11.jpg)
+        showImage("img11.jpg")
     }
-    else{
-        showImage(img11.jpg)
-    }
+    
 
 }
 
