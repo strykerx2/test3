@@ -58,7 +58,7 @@ function closeImage() {
 function leftImage(){
     showImage(img12.png);
     showImage("img1.png");
-   /* 
+   
     closeImage();
     if(ph == 1)
     {
@@ -108,7 +108,7 @@ function leftImage(){
     {
         showImage("img11.jpg")
     }
-    */
+    
     
 
 }
