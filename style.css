@@ -13,7 +13,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 30px;
-	background: white;
+	background: #121FCF;
+	background: linear-gradient(to right, #0e85e0 0%, #26ff1a 100%);
 	-webkit-text-fill-color: transparent;
 }
 /* Styling gallery section where all images are */
