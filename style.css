@@ -55,7 +55,23 @@ body {
 .close-button {
 	position: absolute;
 	top: 20px;
-	right: 50px;
+	right: 50%;
+	font-size:60px;
+	color: #fff;
+	cursor: pointer;
+}
+.left-button {
+	position: absolute;
+	top: 20px;
+	right: 25%;
+	font-size:60px;
+	color: #fff;
+	cursor: pointer;
+}
+.right-button {
+	position: absolute;
+	top: 20px;
+	right: 75%;
 	font-size:60px;
 	color: #fff;
 	cursor: pointer;
