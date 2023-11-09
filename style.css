@@ -1,3 +1,4 @@
+/* Import google font */
 @import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200;300;400;500;600;700&display=swap');
 
 body {
@@ -14,6 +15,8 @@ body {
 	font-size: 30px;
 	background: #121FCF;
 	background: linear-gradient(to right, #0e85e0 0%, #26ff1a 100%);
+	
+	-webkit-text-fill-color: transparent;
 }
 /* Styling gallery section where all images are */
 .gallery {
