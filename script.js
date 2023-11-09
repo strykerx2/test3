@@ -19,25 +19,25 @@ function closeImage() {
 
 function leftImage(){
     closeImage();
-    if(ph == atl.png)
+    if(ph == img1.jpg)
     {
-        showImage(tor.png);
+        showImage(img12.png);
     }
-    else if(ph == bos.png)
+    else if(ph == img2.jpg)
     {
-        showImage(atl.png);
+        showImage(img1.jpg);
     }
-    else if(ph == chh.png)
+    else if(ph == img3.png)
     {
-        showImage(bos.png);
+        showImage(img2.jpg);
     }
-    else if(ph = cle.png)
+    else if(ph = img4.png)
     {
-        showImage(chh.png);
+        showImage(img4.png);
     }
     else if(ph == img5.jpg)
     {
-        showImage(chi.png)
+        showImage(img4.png)
     }
 
 }
